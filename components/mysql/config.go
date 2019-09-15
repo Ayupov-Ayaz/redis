@@ -29,7 +29,7 @@ func (cfg *config) GetDsn() string {
 }
 
 func NewConfig() (*config, error) {
-	if err := godotenv.Load("./components/mysql/.env.mysql"); err != nil {
+	if err := godotenv.Load("./components/mysql/.env"); err != nil {
 		return nil, err
 	}
 
