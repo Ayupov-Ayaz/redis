@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    image: db:5.7
+    ports:
+      - ${MYSQL_PORT}:3306
+    env_file:
+      .env
+    restart: always
+    volumes:
+      - db_data:/var/lib/db
+    container_name: ${CONTAINER_NAME}
+
+volumes:
+  db_data:

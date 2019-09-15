@@ -20,7 +20,7 @@ func (cfg *config) GetAddr() string {
 }
 
 func NewConfig() (Config, error) {
-	if err := godotenv.Load("./components/redis/.env.redis"); err != nil {
+	if err := godotenv.Load("./components/redis/.env"); err != nil {
 		return nil, err
 	}
 
