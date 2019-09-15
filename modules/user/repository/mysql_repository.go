@@ -52,7 +52,7 @@ func (rep *mysqlUserRepository) Update(ctx context.Context, user *models.User) e
 	})
 }
 
-func (rep *mysqlUserRepository) Get(ctx context.Context, id uint) (*models.User, error) {
+func (rep *mysqlUserRepository) Get(ctx context.Context, id uint64) (*models.User, error) {
 	query := `
 		SELECT * FROM users WHERE id = :id
 	`
@@ -104,7 +104,7 @@ func (rep *mysqlUserRepository) GetByEmail(ctx context.Context, email string) (*
 	return user, nil
 }
 
-func (rep *mysqlUserRepository) Delete(ctx context.Context, id uint) error {
+func (rep *mysqlUserRepository) Delete(ctx context.Context, id uint64) error {
 	query := `
 		DELETE FROM users WHERE id = :id
 	`
